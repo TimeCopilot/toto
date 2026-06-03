@@ -13,9 +13,15 @@ import dataclasses
 import functools as ft
 import json
 import math
+import sys
 import warnings
 from pathlib import Path
-from typing import Any, Callable, NamedTuple, NotRequired, Optional, TypedDict
+from typing import Any, Callable, NamedTuple, Optional, TypedDict
+
+if sys.version_info >= (3, 11):
+    from typing import NotRequired
+else:
+    from typing_extensions import NotRequired
 
 import dd_unit_scaling as uu
 import numpy as np
