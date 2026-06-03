@@ -1,17 +1,6 @@
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "toto-ts"
-version = "0.2.0"
-description = "Time-Series-Optimized Transformer for Observability"
-readme = "README.md"
-requires-python = ">=3.10"
-license = {text = "Apache-2.0"}
-authors = [
-    {name = "DataDog, Inc."}
-]
+name = "timecopilot-toto"
+version = "0.1.6"
 dynamic = ["dependencies"]
 
 [tool.setuptools.dynamic]
