@@ -128,10 +128,13 @@ class Toto(torch.nn.Module, ModelHubMixin):
         revision: Optional[str],
         cache_dir: Optional[Union[str, Path]],
         force_download: bool,
-        proxies: Optional[Dict],
-        resume_download: Optional[bool],
         local_files_only: bool,
         token: Union[str, bool, None],
+        # Kept optional for compatibility: huggingface-hub>=1 no longer forwards
+        # these to _from_pretrained nor accepts them in hf_hub_download, while
+        # hub<1 still passes them (and they are simply ignored here).
+        proxies: Optional[Dict] = None,
+        resume_download: Optional[bool] = None,
         map_location: str = "cpu",
         strict: bool = False,
         **model_kwargs,
@@ -148,8 +151,6 @@ class Toto(torch.nn.Module, ModelHubMixin):
                 revision=revision,
                 cache_dir=cache_dir,
                 force_download=force_download,
-                proxies=proxies,
-                resume_download=resume_download,
                 token=token,
                 local_files_only=local_files_only,
             )
